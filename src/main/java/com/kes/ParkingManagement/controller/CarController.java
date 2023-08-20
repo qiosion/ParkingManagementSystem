@@ -49,14 +49,14 @@ public class CarController {
     매개변수
         - CarDTO : 자동차 정보
         - model
-    메서드 설명 : 전체 주차 정보를 조회
+    메서드 설명 : 현재 주차중인 차량 정보를 조회
     carDTOList :
-        입차/출차 된 차의 내역을 모두 출력.
+        입차/출차 된 차의 내역을 출력.
         parkingLot.jsp 에서 carList 를 통해 사용가능.
     */
     @GetMapping("/list")
     public String carList(@ModelAttribute CarDTO carDTO, Model model){
-        List<CarDTO> carDTOList = carService.viewAll();
+        List<CarDTO> carDTOList = carService.viewNow();
         model.addAttribute("carList", carDTOList);
         return "parkingLot"; // parkingLot.jsp로 이동
     }

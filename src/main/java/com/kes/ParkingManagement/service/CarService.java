@@ -35,6 +35,11 @@ public class CarService {
         return carRepository.viewAll();
     }
 
+    // 현재 주차내역 출력
+    public List<CarDTO> viewNow() {
+        return carRepository.viewNow();
+    }
+
     // 출차 처리
     public void exitCar(CarDTO carDTO) {
         CarDTO dto = findByCN(carDTO.getCarNumber());

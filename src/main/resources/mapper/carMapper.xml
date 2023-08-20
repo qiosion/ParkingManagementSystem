@@ -17,9 +17,16 @@
 
     <!-- 주차내역 모두 출력 -->
     <select id="viewAll" resultType="carDTO">
-        select * from parkinglot_table order by parkNumber
+        select * from parkinglot_table
+        order by parkNumber
     </select>
 
+    <!-- 현재 주차중인 주차내역 모두 출력 -->
+    <select id="viewNow" resultType="carDTO">
+        select * from parkinglot_table
+        where state = '입차'
+        order by parkNumber
+    </select>
     <!-- 출차 -->
     <update id="exitCar" parameterType="carDTO">
         update parkinglot_table

@@ -33,6 +33,11 @@ public class CarRepository {
         return sql.selectList("Car.viewAll");
     }
 
+    // 현재 주차내역 출력
+    public List<CarDTO> viewNow() {
+        return sql.selectList("Car.viewNow");
+    }
+
     // 출차
     public void exitCar(CarDTO carDTO) {
         sql.update("Car.exitCar", carDTO);
