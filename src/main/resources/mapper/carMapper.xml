@@ -27,12 +27,19 @@
         where state = '입차'
         order by parkNumber
     </select>
+
     <!-- 출차 -->
     <update id="exitCar" parameterType="carDTO">
         update parkinglot_table
         set exitTime = #{exitTime}, state = '출차'
         where carNumber=#{carNumber} and exitTime is null
     </update>
+
+    <!-- 출차 시 등록체크 -->
+    <select id="outCheck" parameterType="String" resultType="int">
+        select count(*) from parkinglot_table
+        where carNumber= #{carNumber} and state = '입차';
+    </select>
 
     <!-- 정산 내역 (상세정보) carNumber 로 찾기 -->
     <select id="findByCN" parameterType="String" resultType="carDTO">

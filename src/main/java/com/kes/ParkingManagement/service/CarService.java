@@ -40,8 +40,15 @@ public class CarService {
         return carRepository.viewNow();
     }
 
+    // 출차 시 등록된 차량인지 확인
+    public boolean outCheck(String carNumber) {
+        return carRepository.outCheck(carNumber) > 0;
+    }
+
     // 출차 처리
     public void exitCar(CarDTO carDTO) {
+        String carNumber = carDTO.getCarNumber();
+
         CarDTO dto = findByCN(carDTO.getCarNumber());
         dto.setExitTime(LocalDateTime.now());
         carRepository.exitCar(dto); // 출차 처리

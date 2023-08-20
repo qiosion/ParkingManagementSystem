@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8841cd7d-11f8-4da0-af1d-4d2a6c2cc26a" name="Changes" comment="입차 시 중복 차량 확인">
+    <list default="true" id="8841cd7d-11f8-4da0-af1d-4d2a6c2cc26a" name="Changes" comment="전체 주차 목록/현재 주차 목록">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/repository/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/repository/CarRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/service/CarService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/carMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/carMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/parkingLot.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/parkingLot.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +151,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1692447712887</updated>
-      <workItem from="1692447714233" duration="43004000" />
+      <workItem from="1692447714233" duration="44942000" />
     </task>
     <task id="LOCAL-00001" summary="입/출차 기능, 전체 주차 목록, 정산 페이지, 주차기간 계산">
       <created>1692510779063</created>
@@ -170,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692513304972</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="전체 주차 목록/현재 주차 목록">
+      <created>1692514300030</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1692514300030</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +194,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="입/출차 기능, 전체 주차 목록, 정산 페이지, 주차기간 계산" />
     <MESSAGE value="입차 시 중복 차량 확인" />
-    <option name="LAST_COMMIT_MESSAGE" value="입차 시 중복 차량 확인" />
+    <MESSAGE value="전체 주차 목록/현재 주차 목록" />
+    <option name="LAST_COMMIT_MESSAGE" value="전체 주차 목록/현재 주차 목록" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

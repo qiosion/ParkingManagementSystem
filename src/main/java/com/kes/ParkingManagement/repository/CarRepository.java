@@ -43,6 +43,10 @@ public class CarRepository {
         sql.update("Car.exitCar", carDTO);
     }
 
+    public int outCheck(String carNumber) {
+        return sql.selectOne("Car.outCheck", carNumber);
+    }
+
     // 정산 내역 (상세정보)
     public CarDTO findByCN(String carNumber) {
         return sql.selectOne("Car.findByCN", carNumber);

@@ -70,31 +70,31 @@ public class CarController {
     */
     @PostMapping("/exit")
     public String out(@ModelAttribute CarDTO carDTO, Model model){
+        String carNumber = carDTO.getCarNumber();
 
-        carService.exitCar(carDTO);
+        boolean outChk = carService.outCheck(carNumber);
+        // outCheck 메서드 결과 0 이상의 값이 리턴됐다 = 주차되어있다 = true
 
-        CarDTO dto = carService.findByCN(carDTO.getCarNumber());
+        if (! outChk) { // 등록되지 않은 번호
+            String msg = "등록되지 않은 번호입니다";
+            model.addAttribute("msg", msg);
+            return "index"; // index.jsp로 이동
+        }
+
+        try {
+            carService.exitCar(carDTO);
+        } catch(Exception e) {
+            String msg = "오류가 발생했습니다.";
+            model.addAttribute("msg", msg);
+            return "index"; // index.jsp로 이동
+        }
+
+        CarDTO dto = carService.findByCN(carNumber);
 
         model.addAttribute("car", dto);
         return "checkout"; // checkout.jsp : 정산페이지
 //        return "redirect:/car/checkout"; // checkout.jsp : 정산페이지
 
-        /*
-        carDTO.setExitTime(LocalDateTime.now());
-        carDTO.setState("출차");
-
-        여기서 문제점 ! 같은차번호라면?
-        흠..차번호가 있는지 없는지 확인할 때 state='입차'인 것에서만 골라야하겠네
-
-        // 출차 처리 및 정산 내역
-        CarDTO exitResult = carService.exitCarAndView(carDTO);
-        if (exitResult != null) { // 출차 성공
-            System.out.println("출차시간설정 : " + carDTO.getExitTime());
-            model.addAttribute("car", exitResult);
-        } else { // 출차 실패
-            return "index"; // index.jsp로 이동
-        }
-        */
     }
 
     @GetMapping("/checkout")
