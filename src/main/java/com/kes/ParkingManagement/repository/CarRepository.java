@@ -24,6 +24,10 @@ public class CarRepository {
         return sql.insert("Car.parkCar", carDTO);
     }
 
+    public int inCheck(String carNumber) {
+        return sql.selectOne("Car.inCheck", carNumber);
+    }
+
     // 주차내역 모두 출력
     public List<CarDTO> viewAll() {
         return sql.selectList("Car.viewAll");
@@ -36,7 +40,6 @@ public class CarRepository {
 
     // 정산 내역 (상세정보)
     public CarDTO findByCN(String carNumber) {
-        System.out.println("레포 정산 : " + sql.selectOne("Car.findByCN", carNumber));
         return sql.selectOne("Car.findByCN", carNumber);
     }
 
@@ -44,4 +47,5 @@ public class CarRepository {
     public void updateParkingDuration(CarDTO carDTO) {
         sql.update("Car.updateParkingDuration", carDTO);
     }
+
 }

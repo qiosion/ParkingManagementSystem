@@ -9,6 +9,12 @@
         values (#{carNumber}, #{entryTime})
     </insert>
 
+    <!-- 입차 시 중복체크 -->
+    <select id="inCheck" parameterType="String" resultType="int">
+        select count(*) from parkinglot_table
+        where carNumber= #{carNumber} and state = '입차';
+    </select>
+
     <!-- 주차내역 모두 출력 -->
     <select id="viewAll" resultType="carDTO">
         select * from parkinglot_table order by parkNumber
@@ -26,6 +32,7 @@
         select * from parkinglot_table
         where carNumber= #{carNumber};
     </select>
+
     <!-- 주차시간 계산 -->
     <update id="updateParkingDuration" parameterType="carDTO">
         update parkinglot_table

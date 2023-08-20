@@ -29,14 +29,16 @@ public class CarController {
         - state는 '입차'가 디폴트값
     */
     @PostMapping("/park")
-    public String in(@ModelAttribute CarDTO carDTO){
+    public String in(@ModelAttribute CarDTO carDTO, Model model){
         String carNumber = carDTO.getCarNumber(); // 차번호
-        System.out.println("입차번호 : " + carNumber);
 
         int parkResult = carService.parkCar(carDTO);
         if (parkResult > 0) { // 주차 성공
-            System.out.println("입차시간설정 : " + carDTO.getEntryTime());
             return "redirect:/car/list";
+        } else if (parkResult == -1) { // 중복 차량
+            String msg = "중복된 차번호로 주차할 수 없습니다";
+            model.addAttribute("msg", msg);
+            return "index";
         } else { // 주차 실패
             return "index"; // index.jsp로 이동
         }
@@ -68,7 +70,6 @@ public class CarController {
     */
     @PostMapping("/exit")
     public String out(@ModelAttribute CarDTO carDTO, Model model){
-        System.out.println("출차");
 
         carService.exitCar(carDTO);
 
