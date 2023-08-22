@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 @RequiredArgsConstructor
@@ -57,4 +58,12 @@ public class CarRepository {
         sql.update("Car.updateParkingDuration", carDTO);
     }
 
+    // 페이징
+    public List<CarDTO> pagingList(Map<String, Integer> pagingParams) {
+        return sql.selectList("Car.pagingList", pagingParams);
+    }
+
+    public int carCount() {
+        return sql.selectOne("Car.carCount");
+    }
 }

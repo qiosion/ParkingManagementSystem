@@ -4,23 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d095f52-4643-4da3-94d4-cb5e15e52bb0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="2d095f52-4643-4da3-94d4-cb5e15e52bb0" name="Changes" comment="주문dto">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/dto/PageDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/repository/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/repository/CarRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/service/CarService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/carMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/carMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checkout.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/parkingLot.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/parkingLot.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -95,11 +99,38 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1692599134114</updated>
-      <workItem from="1692599135480" duration="6053000" />
+      <workItem from="1692599135480" duration="11155000" />
     </task>
+    <task id="LOCAL-00001" summary="기존에 기록이 있는 차를 출차시 발생하는 오류 해결">
+      <created>1692665463740</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1692665463740</updated>
+    </task>
+    <task id="LOCAL-00002" summary="기존에 기록이 있는 차를 출차시 발생하는 오류 해결">
+      <created>1692669046873</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1692669046874</updated>
+    </task>
+    <task id="LOCAL-00003" summary="주문dto">
+      <created>1692669137567</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1692669137567</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="기존에 기록이 있는 차를 출차시 발생하는 오류 해결" />
+    <MESSAGE value="주문dto" />
+    <option name="LAST_COMMIT_MESSAGE" value="주문dto" />
   </component>
 </project>

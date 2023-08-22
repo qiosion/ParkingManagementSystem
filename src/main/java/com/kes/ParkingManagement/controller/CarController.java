@@ -1,6 +1,7 @@
 package com.kes.ParkingManagement.controller;
 
 import com.kes.ParkingManagement.dto.CarDTO;
+import com.kes.ParkingManagement.dto.PageDTO;
 import com.kes.ParkingManagement.service.CarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -104,19 +105,4 @@ public class CarController {
         return "checkout"; // parkingLot.jsp로 이동
     }
 
-    /*
-    메서드명 : paging
-    매개변수
-        - Model model
-        - int page : page 값은 필수가 아니고, defaultValue는 1이다
-    메서드 설명 : 페이지네이션
-        - /car/paging?page=2 와 같은 방식을 통해 해당 페이지를 읽어온다
-        - 처음 페이지 요청은 1페이지를 보여줌
-     */
-    @GetMapping("/paging")
-    public String paging(Model model,
-                         @RequestParam(value = "page", required = false, defaultValue = "1") int page) {
-
-        return "index";
-    }
 }
