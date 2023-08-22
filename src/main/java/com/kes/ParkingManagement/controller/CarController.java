@@ -90,35 +90,6 @@ public class CarController {
         }
     }
 
-    @PostMapping("/exit2")
-    public String out2(@ModelAttribute CarDTO carDTO, Model model){
-        String carNumber = carDTO.getCarNumber();
-
-        boolean outChk = carService.outCheck(carNumber);
-        // outCheck 메서드 결과 0 이상의 값이 리턴됐다 = 주차되어있다 = true
-
-        if (! outChk) { // 등록되지 않은 번호
-            String msg = "등록되지 않은 번호입니다";
-            model.addAttribute("msg", msg);
-            return "index"; // index.jsp로 이동
-        }
-
-        try {
-            carService.exitCar(carDTO);
-        } catch(Exception e) {
-            String msg = "오류가 발생했습니다.";
-            model.addAttribute("msg", msg);
-            return "index"; // index.jsp로 이동
-        }
-
-        CarDTO dto = carService.findByCN(carNumber);
-
-        model.addAttribute("car", dto);
-        return "checkout"; // checkout.jsp : 정산페이지
-
-    }
-
-
     /*
     메서드명 : checkout
     매개변수

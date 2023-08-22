@@ -73,25 +73,6 @@ public class CarService {
 
     }
 
-    // 출차 처리
-    public void exitCar2(CarDTO carDTO) {
-        String carNumber = carDTO.getCarNumber();
-
-        CarDTO dto = findByCN(carDTO.getCarNumber());
-        dto.setExitTime(LocalDateTime.now());
-        carRepository.exitCar(dto); // 출차 처리
-
-        LocalDateTime entryTime = dto.getEntryTime();
-        LocalDateTime exitTime = dto.getExitTime();
-
-        if (entryTime != null && exitTime != null) {
-            long parkingMinutes = Duration.between(entryTime, exitTime).toMinutes();
-            dto.setParkingDuration(parkingMinutes);
-
-            carRepository.updateParkingDuration(dto); // 주차시간 계산
-        }
-    }
-
     // 정산 내역 (상세정보) carNumber 로 찾기
     public CarDTO findByCN(String carNumber) {
         return carRepository.findByCN(carNumber);
