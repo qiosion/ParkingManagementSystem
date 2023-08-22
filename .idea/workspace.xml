@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d095f52-4643-4da3-94d4-cb5e15e52bb0" name="Changes" comment="주문dto">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/dto/PageDTO.java" afterDir="false" />
+    <list default="true" id="2d095f52-4643-4da3-94d4-cb5e15e52bb0" name="Changes" comment="주차요금 관련 변경">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/repository/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/orderMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/dto/OrderDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/repository/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/repository/CarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/service/CarService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/carMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/carMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +61,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable",
+    "spring.configuration.checksum": "606cc3fbe505365fb5ea56a13704818d",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -72,9 +74,6 @@
       <predefined_log_file id="Tomcat Host Manager Log" />
       <option name="contextPath" value="/" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="extraClassPath" value="" />
       <option name="port" value="407" />
       <option name="tomcatInfo">
@@ -99,7 +98,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1692599134114</updated>
-      <workItem from="1692599135480" duration="11155000" />
+      <workItem from="1692599135480" duration="11776000" />
+      <workItem from="1692679252564" duration="10442000" />
     </task>
     <task id="LOCAL-00001" summary="기존에 기록이 있는 차를 출차시 발생하는 오류 해결">
       <created>1692665463740</created>
@@ -122,7 +122,21 @@
       <option name="project" value="LOCAL" />
       <updated>1692669137567</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="페이징">
+      <created>1692673119832</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1692673119832</updated>
+    </task>
+    <task id="LOCAL-00005" summary="주차요금 관련 변경">
+      <created>1692691648176</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1692691648176</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +145,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="기존에 기록이 있는 차를 출차시 발생하는 오류 해결" />
     <MESSAGE value="주문dto" />
-    <option name="LAST_COMMIT_MESSAGE" value="주문dto" />
+    <MESSAGE value="페이징" />
+    <MESSAGE value="주차요금 관련 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="주차요금 관련 변경" />
   </component>
 </project>

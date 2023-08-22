@@ -55,8 +55,6 @@ public class CarRepository {
 
     // 주차시간 계산
     public void updateParkingInformation(CarDTO carDTO) {
-        System.out.println("요금" + carDTO.getParkingFee());
-
         sql.update("Car.updateParkingInformation", carDTO);
     }
 

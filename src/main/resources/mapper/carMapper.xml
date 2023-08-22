@@ -50,7 +50,7 @@
     </select>
 
     <!-- parkNumber 로 찾기 -->
-    <select id="findByPN" parameterType="String" resultType="carDTO">
+    <select id="findByPN" parameterType="java.lang.Long" resultType="carDTO">
         select * from parkinglot_table
         where parkNumber= #{parkNumber}
         order by exitTime desc -- 최신 출차 기록을 먼저 가져옴

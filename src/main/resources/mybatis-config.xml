@@ -4,5 +4,6 @@
 <configuration>
     <typeAliases>
         <typeAlias type="com.kes.ParkingManagement.dto.CarDTO" alias="carDTO"></typeAlias>
+        <typeAlias type="com.kes.ParkingManagement.dto.OrderDTO" alias="orderDTO"></typeAlias>
     </typeAliases>
 </configuration>
