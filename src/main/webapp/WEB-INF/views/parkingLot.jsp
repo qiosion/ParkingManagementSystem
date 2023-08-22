@@ -35,7 +35,7 @@
             <tr>
                 <td>${car.parkNumber}</td>
                 <td>${car.carNumber}</td>
-                <td>${car.entryTime}</td>
+                <td>${car.entryTime}분</td>
             </tr>
         </c:forEach>
     </table>

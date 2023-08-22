@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
 
 <html>
 <head>
@@ -30,7 +31,7 @@
      각각 onclick 이벤트를 주었음 -->
 
     <div>
-        <h1>주차 관리 시스템</h1>
+        <a href="/"><h1>주차 관리 시스템</h1></a>
         <form id="form" method="post">
             <input type="text" name="carNumber" placeholder="차번호"><br>
             <input type="submit" id="park" value="주차" onclick='javascript: form.action="/car/park"'>
@@ -42,7 +43,7 @@
 
     <!-- 주차 목록 보여줌 -->
     <div>
-        <h3>전체 주차 목록</h1>
+        <h3>전체 주차 목록</h3>
         <table>
             <tr>
                 <th>주차번호</th>
@@ -52,12 +53,14 @@
                 <th>주차시간</th>
             </tr>
             <c:forEach items="${carList}" var="car">
+                <c:set var="formattedEntryTime" value="${car.entryTime.format(DateTimeFormatter.ofPattern('yyyy/MM/dd HH:mm:ss'))}" />
+                <c:set var="formattedExitTime" value="${car.exitTime.format(DateTimeFormatter.ofPattern('yyyy/MM/dd HH:mm:ss'))}" />
                 <tr>
                     <td>${car.parkNumber}</td>
                     <td>${car.carNumber}</td>
-                    <td>${car.entryTime}</td>
-                    <td>${car.exitTime}</td>
-                    <td>${car.parkingDuration}</td>
+                    <td>${formattedEntryTime}</td>
+                    <td>${formattedExitTime}</td>
+                    <td>${car.parkingDuration}분</td>
                 </tr>
             </c:forEach>
         </table>

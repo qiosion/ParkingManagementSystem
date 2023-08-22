@@ -46,7 +46,35 @@ public class CarService {
     }
 
     // 출차 처리
-    public void exitCar(CarDTO carDTO) {
+    public int exitCar(CarDTO carDTO) {
+        String carNumber = carDTO.getCarNumber();
+
+        // 기존에 주차된 차량인지 확인
+        int outChk = carRepository.outCheck(carNumber);
+
+        if (outChk == 0) { // 주차되지 않은 차량이라면 에러 처리
+            return -1;
+        } else {
+            CarDTO dto = findByCN(carDTO.getCarNumber());
+            dto.setExitTime(LocalDateTime.now());
+            carRepository.exitCar(dto); // 출차 처리
+
+            LocalDateTime entryTime = dto.getEntryTime();
+            LocalDateTime exitTime = dto.getExitTime();
+
+            if (entryTime != null && exitTime != null) {
+                long parkingMinutes = Duration.between(entryTime, exitTime).toMinutes();
+                dto.setParkingDuration(parkingMinutes);
+
+                carRepository.updateParkingDuration(dto); // 주차시간 계산
+            }
+            return 1;
+        }
+
+    }
+
+    // 출차 처리
+    public void exitCar2(CarDTO carDTO) {
         String carNumber = carDTO.getCarNumber();
 
         CarDTO dto = findByCN(carDTO.getCarNumber());
