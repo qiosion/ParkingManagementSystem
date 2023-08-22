@@ -67,30 +67,24 @@ public class CarController {
     매개변수
         - CarDTO carDTO: 자동차 정보
         - Model model
-    메서드 설명 : 출차. exitTime에 현재시각을 등록하고 state 를 '출차'로 변경
+    메서드 설명 : 출차시도. 등록된 번호라면 주문 페이지로 이동함
     */
     @PostMapping("/exit")
     public String out(@ModelAttribute CarDTO carDTO, Model model){
         String carNumber = carDTO.getCarNumber();
 
-        int exitResult = carService.exitCar(carDTO);
-        if (exitResult > 0) { // 출차 성공
-            carService.exitCar(carDTO);
+        // 등록된 번호인지 확인
+        CarDTO dto = carService.findByCN(carNumber);
 
-            CarDTO dto = carService.findByCN(carNumber);
-
-
-            model.addAttribute("car", dto);
-            return "checkout"; // checkout.jsp : 정산페이지
-        } else if (exitResult == -1) { // 등록되지 않은 번호
+        if (dto == null) { // 등록X 차량
             String msg = "등록되지 않은 번호입니다";
             model.addAttribute("msg", msg);
-            return "index"; // index.jsp로 이동
-        } else { // 출차 실패
-            String msg = "오류가 발생했습니다.";
-            model.addAttribute("msg", msg);
-            return "index"; // index.jsp로 이동
+            return "index";
         }
+
+        // 주문 페이지로 넘어가기
+        model.addAttribute("car", dto);
+        return "checkout"; // checkout.jsp : 정산페이지
     }
 
     /*

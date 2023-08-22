@@ -48,12 +48,8 @@
                 <td>${car.parkingFee}원</td>
             </tr>
         </table>
-<%--        <form action="/order/process" method="post">--%>
-<%--            <input type="hidden" name="parkNumber"  value="${car.parkNumber}">--%>
-<%--            <button type="submit">결제하기</button>--%>
-<%--        </form>--%>
         <button type="button" id="orderBtn">결제하기</button>
-        <a href="/">목록</a>
+        <a href="/"><button>목록</button></a>
     </div>
 <script>
     // 결제버튼 클릭
