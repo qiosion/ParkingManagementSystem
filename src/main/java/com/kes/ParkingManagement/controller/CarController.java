@@ -78,6 +78,8 @@ public class CarController {
             carService.exitCar(carDTO);
 
             CarDTO dto = carService.findByCN(carNumber);
+
+
             model.addAttribute("car", dto);
             return "checkout"; // checkout.jsp : 정산페이지
         } else if (exitResult == -1) { // 등록되지 않은 번호

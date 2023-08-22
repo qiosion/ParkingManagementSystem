@@ -5,7 +5,7 @@
 <c:set var="formattedExitTime" value="${car.exitTime.format(DateTimeFormatter.ofPattern('yyyy/MM/dd HH:mm:ss'))}" />
 
 <%-- 주차 요금 계산: 30분마다 1000원씩 --%>
-<c:set var="parkingFee" value="${(car.parkingDuration / 30) * 1000}" />
+<%--  <c:set var="parkingFee" value="${(car.parkingDuration / 30) * 1000}" />  --%>
 
 
 <html>
@@ -43,10 +43,13 @@
                 <td>${formattedEntryTime}</td>
                 <td>${formattedExitTime}</td>
                 <td>${car.parkingDuration}분</td>
-                <td>${parkingFee}원</td>
+                <td>${car.parkingFee}원</td>
             </tr>
         </table>
-        <button>결제하기</button>
+        <form action="/order/process" method="post">
+            <input type="hidden" name="parkNumber"  value="${car.parkNumber}">
+            <button type="submit">결제하기</button>
+        </form>
         <a href="/">목록</a>
     </div>
 

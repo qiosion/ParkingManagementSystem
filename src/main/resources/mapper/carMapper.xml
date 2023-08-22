@@ -49,11 +49,20 @@
         limit 1 -- 최신 출차 기록 중 첫 번째만 가져옴
     </select>
 
+    <!-- parkNumber 로 찾기 -->
+    <select id="findByPN" parameterType="String" resultType="carDTO">
+        select * from parkinglot_table
+        where parkNumber= #{parkNumber}
+        order by exitTime desc -- 최신 출차 기록을 먼저 가져옴
+        limit 1 -- 최신 출차 기록 중 첫 번째만 가져옴
+    </select>
+
     <!-- 주차시간 계산 -->
-    <update id="updateParkingDuration" parameterType="carDTO">
+    <update id="updateParkingInformation" parameterType="carDTO">
         update parkinglot_table
-        set parkingDuration = TIMESTAMPDIFF(MINUTE, entryTime, exitTime)
-        where carNumber=#{carNumber}
+        set parkingDuration = TIMESTAMPDIFF(MINUTE, entryTime, exitTime),
+        parkingFee = #{parkingFee}
+        where carNumber = #{carNumber}
           <!--and exitTime is not null and entryTime is not null -->
     </update>
 

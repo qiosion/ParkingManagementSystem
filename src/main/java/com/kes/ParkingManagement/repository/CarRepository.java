@@ -54,8 +54,10 @@ public class CarRepository {
     }
 
     // 주차시간 계산
-    public void updateParkingDuration(CarDTO carDTO) {
-        sql.update("Car.updateParkingDuration", carDTO);
+    public void updateParkingInformation(CarDTO carDTO) {
+        System.out.println("요금" + carDTO.getParkingFee());
+
+        sql.update("Car.updateParkingInformation", carDTO);
     }
 
     // 페이징
@@ -65,5 +67,9 @@ public class CarRepository {
 
     public int carCount() {
         return sql.selectOne("Car.carCount");
+    }
+
+    public CarDTO findByPN(Long parkNumber) {
+        return sql.selectOne("Car.findByPN", parkNumber);
     }
 }

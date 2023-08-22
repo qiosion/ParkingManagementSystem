@@ -17,6 +17,7 @@ public class CarDTO {
     private LocalDateTime entryTime; // 입차시간
     private LocalDateTime exitTime;  // 출차시간
     private Long parkingDuration; // 주차시간 = 출차시간-입차시간
+    private Long parkingFee; // 주차요금
     private String state; // 상태 : 입차/출차
 
 //    public Long getParkingDuration() {

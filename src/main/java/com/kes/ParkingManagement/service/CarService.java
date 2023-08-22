@@ -69,7 +69,12 @@ public class CarService {
                 long parkingMinutes = Duration.between(entryTime, exitTime).toMinutes();
                 dto.setParkingDuration(parkingMinutes);
 
-                carRepository.updateParkingDuration(dto); // 주차시간 계산
+                // 주차요금 계산 : 30분마다 1천원
+                long parkingFee = (parkingMinutes / 30) * 1000;
+//                long parkingFee = parkingMinutes* 1000;
+                dto.setParkingFee(parkingFee);
+
+                carRepository.updateParkingInformation(dto); // 주차시간 계산
             }
             return 1;
         }
@@ -126,5 +131,10 @@ public class CarService {
         pageDTO.setEndPage(endPage);
 
         return pageDTO;
+    }
+
+    // 주차번호로 자동차 정보 찾기
+    public CarDTO findByPN(Long parkNumber) {
+        return carRepository.findByPN(parkNumber);
     }
 }
