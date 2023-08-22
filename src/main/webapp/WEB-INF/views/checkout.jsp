@@ -10,6 +10,8 @@
 
 <html>
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
     <title>Checkout Place</title>
     <style>
         * {
@@ -46,12 +48,59 @@
                 <td>${car.parkingFee}원</td>
             </tr>
         </table>
-        <form action="/order/process" method="post">
-            <input type="hidden" name="parkNumber"  value="${car.parkNumber}">
-            <button type="submit">결제하기</button>
-        </form>
+<%--        <form action="/order/process" method="post">--%>
+<%--            <input type="hidden" name="parkNumber"  value="${car.parkNumber}">--%>
+<%--            <button type="submit">결제하기</button>--%>
+<%--        </form>--%>
+        <button type="button" id="orderBtn">결제하기</button>
         <a href="/">목록</a>
     </div>
+<script>
+    // 결제버튼 클릭
+    $("#orderBtn").on("click",function(){
+        if (confirm("주차 요금을 결제하시겠습니까?")) {
+            var parkNumber = ${car.parkNumber}; // 주차번호
+            var amount = ${car.parkingFee}; // 결제금액
+            var buyer_name = ${car.carNumber}; // 차번호
+            IMP.init('imp35581825'); // 가맹점 식별코드
+            IMP.request_pay({
+                pg : 'kakaopay.TC0ONETIME',
+                pay_method : 'kakaopay',
+                merchant_uid : 'merchant' + new Date().getTime(),
+                name : '주문명:결제테스트',
+                amount : amount, //amount,
+                buyer_name : buyer_name
+            }, function(rsp) {
+                if ( rsp.success ) {
+                    var msg = '결제가 완료되었습니다.';
+                    msg += '\n고유ID : ' + rsp.imp_uid;
+                    msg += '\n상점 거래ID : ' + rsp.merchant_uid;
+                    msg += '\결제 금액 : ' + rsp.paid_amount;
+                    msg += '카드 승인번호 : ' + rsp.apply_num;
 
+                    // 재고 업데이트, 출고내역 등록
+                    $.ajax({
+                        url: "${pageContext.request.contextPath}/order/process",
+                        type: "POST",
+                        data : {
+                            parkNumber : parkNumber,
+                            amount : amount,
+                            carNumber : buyer_name},
+                        success : function(){
+                            alert(msg);
+                            location.href = "${pageContext.request.contextPath}/"
+                        },error:function(){
+                            alert("실패");
+                        }
+                    })
+                } else {
+                    var msg = '결제에 실패하였습니다.';
+                    msg += '에러내용 : ' + rsp.error_msg;
+                    alert(msg);
+                }
+            });
+        }
+    })
+</script>
 </body>
 </html>

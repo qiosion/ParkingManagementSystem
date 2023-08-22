@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d095f52-4643-4da3-94d4-cb5e15e52bb0" name="Changes" comment="주차요금 관련 변경">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/repository/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/orderMapper.xml" afterDir="false" />
+    <list default="true" id="2d095f52-4643-4da3-94d4-cb5e15e52bb0" name="Changes" comment="주문하기(api사용X)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/dto/OrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/repository/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/repository/CarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/carMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/carMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/service/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checkout.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1692599134114</updated>
       <workItem from="1692599135480" duration="11776000" />
-      <workItem from="1692679252564" duration="10442000" />
+      <workItem from="1692679252564" duration="14603000" />
     </task>
     <task id="LOCAL-00001" summary="기존에 기록이 있는 차를 출차시 발생하는 오류 해결">
       <created>1692665463740</created>
@@ -136,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692691648176</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="주문하기(api사용X)">
+      <created>1692699015818</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1692699015818</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +148,7 @@
     <MESSAGE value="주문dto" />
     <MESSAGE value="페이징" />
     <MESSAGE value="주차요금 관련 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="주차요금 관련 변경" />
+    <MESSAGE value="주문하기(api사용X)" />
+    <option name="LAST_COMMIT_MESSAGE" value="주문하기(api사용X)" />
   </component>
 </project>

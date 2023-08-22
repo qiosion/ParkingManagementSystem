@@ -70,8 +70,9 @@ public class CarService {
                 dto.setParkingDuration(parkingMinutes);
 
                 // 주차요금 계산 : 30분마다 1천원
-                long parkingFee = (parkingMinutes / 30) * 1000;
-//                long parkingFee = parkingMinutes* 1000;
+//                long parkingFee = (parkingMinutes / 30) * 1000;
+                // 주차요금 계산 : 1분마다 10원
+                long parkingFee = parkingMinutes * 10;
                 dto.setParkingFee(parkingFee);
 
                 carRepository.updateParkingInformation(dto); // 주차시간 계산
