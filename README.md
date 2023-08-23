@@ -12,8 +12,8 @@ Simple parking management site that does not require login
 
 
 ###  환경 Environment
-> JAVA, Spring Framework, BootStrap4, HTML5, CSS, Javascript, Mybatis<br>
+> JAVA, Spring Framework, Javascript, Mybatis<br>
 데이터베이스 : MySQL<br>
-서버 : TOMCAT 9.0<br>
+서버 : TOMCAT 9.0.79<br>
 빌드 배포 : Maven<br>
-테스트 툴 : Junit<br>
+
