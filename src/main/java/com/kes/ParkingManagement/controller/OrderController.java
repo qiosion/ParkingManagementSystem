@@ -61,7 +61,5 @@ public class OrderController {
             model.addAttribute("msg", failMsg);
             return "checkout";
         }
-
-        return "index";
     }
 }
