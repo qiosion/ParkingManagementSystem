@@ -1,13 +1,12 @@
 # ParkingManagementSystem
 > 주차관리 시스템<br>
-> 개발기간 : 2023.08.19~2023.08.23 <br>
+> 개발기간 : 2023.08.19~2023.08.24 <br>
 > 개발인원 : 1인
 
 ##  프로젝트 소개 Project Description
-<img width="50%" src="https://github.com/qiosion/qiosion/assets/118775029/896e01a1-0838-4613-b15c-6fccac73f577"/><br>
+<img width="70%" src="https://github.com/qiosion/ParkingManagementSystem/assets/118775029/26c1203b-d37c-4229-95ef-401e7280fafd"/><br>
 - 로그인이 필요없는 간단한 주차 관리 사이트<br>
 Simple parking management site that does not require login
-- [동작영상](https://youtube.com/shorts/yPl8gW-kqEM?feature=share)
 
 
 
