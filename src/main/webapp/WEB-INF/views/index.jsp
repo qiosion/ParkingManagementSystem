@@ -70,6 +70,7 @@
     <!-- 주차 목록 보여줌 -->
     <div>
         <h3>전체 주차 목록</h3>
+        <a href="/excel/parkingLot">출력하기</a>
         <table>
             <tr>
                 <th>주차번호</th>

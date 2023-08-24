@@ -18,7 +18,7 @@
     <!-- 주차내역 모두 출력 -->
     <select id="viewAll" resultType="carDTO">
         select * from parkinglot_table
-        order by parkNumber desc
+        order by parkNumber
     </select>
 
     <!-- 현재 주차중인 주차내역 모두 출력 -->
