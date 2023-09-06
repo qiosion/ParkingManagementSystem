@@ -82,6 +82,37 @@ public class CarService {
 
     }
 
+    // 요금계산을 위한 임시 정보
+    public CarDTO tempInfo(CarDTO carDTO) {
+        String carNumber = carDTO.getCarNumber();
+
+        // 기존에 주차된 차량인지 확인
+        int outChk = carRepository.outCheck(carNumber);
+
+        if (outChk == 0) { // 주차되지 않은 차량이라면 에러 처리
+            return null;
+        } else {
+            CarDTO dto = findByCN(carDTO.getCarNumber());
+            dto.setExitTime(LocalDateTime.now());
+
+            LocalDateTime entryTime = dto.getEntryTime();
+            LocalDateTime exitTime = dto.getExitTime();
+
+            if (entryTime != null && exitTime != null) {
+                long parkingMinutes = Duration.between(entryTime, exitTime).toMinutes();
+                dto.setParkingDuration(parkingMinutes);
+
+                // 주차요금 계산 : 30분마다 1천원
+//                long parkingFee = (parkingMinutes / 30) * 1000;
+                // 주차요금 계산 : 1분마다 10원
+                long parkingFee = parkingMinutes * 10;
+                dto.setParkingFee(parkingFee);
+            }
+            return dto;
+        }
+
+    }
+
     // 정산 내역 (상세정보) carNumber 로 찾기
     public CarDTO findByCN(String carNumber) {
         return carRepository.findByCN(carNumber);

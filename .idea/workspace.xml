@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d095f52-4643-4da3-94d4-cb5e15e52bb0" name="Changes" comment="전체 주차 목록 excel 파일로 저장">
+    <list default="true" id="2d095f52-4643-4da3-94d4-cb5e15e52bb0" name="Changes" comment="redirect 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/controller/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kes/ParkingManagement/service/CarService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +98,8 @@
       <workItem from="1692859705336" duration="797000" />
       <workItem from="1693275136355" duration="1106000" />
       <workItem from="1693302925618" duration="3057000" />
-      <workItem from="1693975828705" duration="1921000" />
+      <workItem from="1693975828705" duration="2868000" />
+      <workItem from="1693980712074" duration="6378000" />
     </task>
     <task id="LOCAL-00001" summary="기존에 기록이 있는 차를 출차시 발생하는 오류 해결">
       <created>1692665463740</created>
@@ -177,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692836380261</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="redirect 수정">
+      <created>1693978414246</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1693978414246</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +212,7 @@
     <MESSAGE value="카카오 지도 api" />
     <MESSAGE value="순서변경 : 주문 완료 후 출차 처리" />
     <MESSAGE value="전체 주차 목록 excel 파일로 저장" />
-    <option name="LAST_COMMIT_MESSAGE" value="전체 주차 목록 excel 파일로 저장" />
+    <MESSAGE value="redirect 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="redirect 수정" />
   </component>
 </project>

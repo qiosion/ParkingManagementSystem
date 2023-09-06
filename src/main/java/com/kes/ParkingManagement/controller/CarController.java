@@ -87,7 +87,7 @@ public class CarController {
 
         // 주문 페이지로 넘어가기
         model.addAttribute("car", dto);
-        return "checkout"; // checkout.jsp : 정산페이지
+        return "redirect:/car/checkout?carNumber="+carNumber; // checkout.jsp : 정산페이지
     }
 
     /*
@@ -100,7 +100,20 @@ public class CarController {
     @GetMapping("/checkout")
     public String checkout(@RequestParam("carNumber") String carNumber, Model model){
         CarDTO carDTO = carService.findByCN(carNumber);
-        model.addAttribute("car", carDTO);
+
+        // 주차정보 계산
+
+        CarDTO calculatedCarDTO = carService.tempInfo(carDTO);
+
+        System.out.println("차번호" + calculatedCarDTO.getCarNumber());
+        System.out.println("출차" + calculatedCarDTO.getExitTime());
+        System.out.println("요금" + calculatedCarDTO.getParkingFee());
+        System.out.println("주차" + calculatedCarDTO.getParkingDuration());
+        if (calculatedCarDTO != null) {
+            model.addAttribute("car", calculatedCarDTO);
+        } else {
+            return "redirect:/";
+        }
         return "checkout"; // parkingLot.jsp로 이동
     }
 
