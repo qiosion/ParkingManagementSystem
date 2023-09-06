@@ -28,7 +28,6 @@
         </style>
 </head>
 <body>
-    <!-- 주차시간, 요금 -->
 
     <div>
         <h1>주차 요금 정산</h1>
@@ -57,7 +56,7 @@
         if (confirm("주차 요금을 결제하시겠습니까?")) {
             var parkNumber = ${car.parkNumber}; // 주차번호
             var amount = ${car.parkingFee}; // 결제금액
-            var buyer_name = ${car.carNumber}; // 차번호
+            var buyer_name = "${car.carNumber}"; // 차번호
             IMP.init('imp35581825'); // 가맹점 식별코드
             IMP.request_pay({
                 pg : 'kakaopay.TC0ONETIME',
