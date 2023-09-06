@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -25,12 +26,13 @@ public class CarController {
     매개변수
         - CarDTO carDTO : 자동차 정보
         - Model model
+        - RedirectAttributes redirectAttributes : index페이지로 리다이렉트 시 메시지를 띄우기 위해 사용
     메서드 설명 : 입차. input으로 넣은 차번호와 entryTime을 삽입
         - 주차번호는 자동증가
         - state는 '입차'가 디폴트값
     */
     @PostMapping("/park")
-    public String in(@ModelAttribute CarDTO carDTO, Model model){
+    public String in(@ModelAttribute CarDTO carDTO, Model model, RedirectAttributes redirectAttributes){
         String carNumber = carDTO.getCarNumber(); // 차번호
 
         int parkResult = carService.parkCar(carDTO);
@@ -38,10 +40,10 @@ public class CarController {
             return "redirect:/car/list";
         } else if (parkResult == -1) { // 중복 차량
             String msg = "중복된 차번호로 주차할 수 없습니다";
-            model.addAttribute("msg", msg);
-            return "index";
+            redirectAttributes.addFlashAttribute("msg", msg); // 메시지를 Flash 속성에 추가
+            return "redirect:/";
         } else { // 주차 실패
-            return "index"; // index.jsp로 이동
+            return "redirect:/"; // index.jsp로 이동
         }
     }
 
@@ -67,10 +69,11 @@ public class CarController {
     매개변수
         - CarDTO carDTO: 자동차 정보
         - Model model
+        - RedirectAttributes redirectAttributes : index페이지로 리다이렉트 시 메시지를 띄우기 위해 사용
     메서드 설명 : 출차시도. 등록된 번호라면 주문 페이지로 이동함
     */
     @PostMapping("/exit")
-    public String out(@ModelAttribute CarDTO carDTO, Model model){
+    public String out(@ModelAttribute CarDTO carDTO, Model model, RedirectAttributes redirectAttributes){
         String carNumber = carDTO.getCarNumber();
 
         // 등록된 번호인지 확인
@@ -78,8 +81,8 @@ public class CarController {
 
         if (dto == null) { // 등록X 차량
             String msg = "등록되지 않은 번호입니다";
-            model.addAttribute("msg", msg);
-            return "index";
+            redirectAttributes.addFlashAttribute("msg", msg); // 메시지를 Flash 속성에 추가
+            return "redirect:/";
         }
 
         // 주문 페이지로 넘어가기

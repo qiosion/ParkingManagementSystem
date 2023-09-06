@@ -19,7 +19,7 @@
         }
     </style>
     <script>
-        var msg = "${msg}";
+        var msg = "<c:if test="${not empty msg}">${msg}</c:if>";
         if (msg !== "") { // 에러메시지가 있을 경우 팝업
             alert(msg);
         }
