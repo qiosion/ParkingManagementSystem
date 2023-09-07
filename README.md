@@ -1,6 +1,6 @@
 # ParkingManagementSystem
 > 주차관리 시스템<br>
-> 개발기간 : 2023.08.19~2023.09.06<br>
+> 개발기간 : 2023.08.19~2023.08.24<br>
 > 개발인원 : 1인
 
 ##  프로젝트 소개 Project Description
