@@ -45,4 +45,8 @@ public class MainController {
 
         return "index";
     }
+
+    public static void main(String[] args) {
+
+    }
 }
